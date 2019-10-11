@@ -6,12 +6,7 @@ public class Cpu extends Player {
 		System.out.println("CPU has drawn: [Hidden]" + " and " + getPlayHand().get(0).getName());
 	}
 	
-	public void showCpuHand() {
-		for (int i = 0; i < playHand.size(); i++){
-			System.out.println(playHand.get(i).getName());
-		}
-		
-	}
+// Word
 	
 	
 	public void strategy(Card[] drawDeck) {
