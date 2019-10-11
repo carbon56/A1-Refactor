@@ -49,17 +49,10 @@ public class Player {
 		
 		
 	}
-	public byte handValue(){
-		byte sum = 0;
-		// Iterate over hand, sum the values;
-		for (int i = 0; i < playHand.size(); i++){
-			sum += playHand.get(i).getNumber();
-		}
-		return sum;
-	}
+
 	
 	
-	public int getHandValue() {
+	public int handValue() {
 		int aceCount = 0;
 		int sum = 0;
 		// Iterate over hand, sum the values;

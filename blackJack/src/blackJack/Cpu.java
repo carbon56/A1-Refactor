@@ -10,7 +10,7 @@ public class Cpu extends Player {
 	
 	
 	public void strategy(Card[] drawDeck) {
-		while(super.getHandValue() < 17) {
+		while(super.handValue() < 17) {
 			super.drawHand("HIT", drawDeck);
 		}
 	}
