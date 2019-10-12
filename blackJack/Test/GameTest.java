@@ -106,7 +106,7 @@ public class GameTest {
 		test.draw();
 		
 		int HandSize = test.getUser().getPlayHand().size();
-		test.hit();
+		test.playerHit();
 		assertEquals(3, HandSize + 1);
 	}
 
@@ -114,7 +114,7 @@ public class GameTest {
 	public void testStand() {
 		Game test = new Game();
 		test.draw();
-		
+		test.playerStand();
 		int HandSize = test.getUser().getPlayHand().size();
 		assertEquals(2, HandSize);
 	}
@@ -122,10 +122,10 @@ public class GameTest {
 	@Test
 	public void testCheckCpuBalance() {
 		Game test = new Game();
-		assertEquals(false,test.checkCpuBalance());
+		assertEquals(false,test.isCpuBalanceZero());
 		
 		test.setCpuBalance(0);
-		assertEquals(true,test.checkCpuBalance());
+		assertEquals(true,test.isCpuBalanceZero());
 		
 		
 		

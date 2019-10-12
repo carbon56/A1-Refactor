@@ -81,7 +81,7 @@ public class Game {
 
 	}
 
-	public void hit() {
+	public void playerHit() {
 		if (move == 1) {
 			user.drawHand("HIT", playingDeck);
 			System.out.println("Your current hand is valued at " + user.handValue());
@@ -91,7 +91,7 @@ public class Game {
 
 	}
 
-	public void stand() {
+	public void playerStand() {
 		if (move == 2) {
 			System.out.println("Dealer's Hand is revealed:");
 			System.out.println("Dealer's hand is valued at " + cpu.handValue());
@@ -102,7 +102,7 @@ public class Game {
 
 	}
 
-	public boolean checkCpuBalance() {
+	public boolean isCpuBalanceZero() {
 		if (cpuBalance == 0) {
 			System.out.println("Dealer has no money");
 			System.out.println("You Win!");
@@ -114,7 +114,7 @@ public class Game {
 
 	}
 
-	public void checkMove() {
+	public void isMoveValid() {
 
 		move = moveinput.nextInt();
 		if (move != 2 && move != 1) {
@@ -134,22 +134,22 @@ public class Game {
 			draw();
 
 			System.out.println("Please enter 1 for HIT or 2 for STAND:");
-			checkMove();
+			isMoveValid();
 
 			while (move != 2) {
-				hit();
+				playerHit();
 				if (instantBust()) {
 					System.out.println("BUST! Dealer has won");
 					break;
 				}
 
 				System.out.println("Please enter 1 for HIT or 2 for STAND:");
-				checkMove();
+				isMoveValid();
 
 			}
-			stand();
+			playerStand();
 			roundOver(); // Round is over, check for if players wins, loses, or ties
-			if(checkCpuBalance() == true) {
+			if(isCpuBalanceZero() == true) {
 				System.exit(0);
 			}; 
 			// Money is won/loss - check if CPU has money left
