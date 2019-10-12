@@ -96,17 +96,7 @@ public class Game {
 			System.out.println("Dealer's Hand is revealed:");
 			System.out.println("Dealer's hand is valued at " + cpu.handValue());
 			cpu.showHand();
-			// 4. Can use for feature envy later, 3. use enumeration for cards later
-			while (cpu.handValue() <= 17) {
-				System.out.println("Dealer hits");
-				cpu.drawHand("HIT", playingDeck);
-				System.out.println("Dealer's new hand is valued at " + cpu.handValue());
-				cpu.showHand();
-
-				if (cpu.handValue() == 21) {
-					break;
-				}
-			}
+			cpu.strategy(playingDeck);
 
 		}
 

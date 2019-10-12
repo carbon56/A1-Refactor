@@ -6,14 +6,22 @@ public class Cpu extends Player {
 		System.out.println("CPU has drawn: [Hidden]" + " and " + getPlayHand().get(0).getName());
 	}
 	
-// Word
-	
 	
 	public void strategy(Card[] drawDeck) {
 		while(super.handValue() < 17) {
+			System.out.println("Dealer hits");
 			super.drawHand("HIT", drawDeck);
+			System.out.println("Dealer's new hand is valued at " + super.handValue());
+			super.showHand();
+
+			if (super.handValue() == 21) {
+				break;
+			}
 		}
 	}
+	
+	
+	
 	
 	public float cpuBets(float balance) {
 		double random = Math.random();
