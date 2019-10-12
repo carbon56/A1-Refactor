@@ -18,11 +18,12 @@ public class Game {
 
 	public static void main(String[] args) {
 		Game ONE = new Game();
+		ONE.startGame();
 
 	}
 
 	public Game() {
-		startGame();
+		
 	}
 
 	public void collectBet() {
@@ -47,13 +48,6 @@ public class Game {
 		else if (user.handValue() == cpu.handValue()) {
 			System.out.println("Tie between Player and Dealer!");
 
-//			if (cpuBalance == 0) {
-//				System.out.println("Dealer has no money");
-//				System.out.println("You Win!");
-//
-//				System.exit(0);
-//				// break;
-//			}
 
 		}
 
@@ -118,14 +112,15 @@ public class Game {
 
 	}
 
-	public void checkCpuBalance() {
+	public boolean checkCpuBalance() {
 		if (cpuBalance == 0) {
 			System.out.println("Dealer has no money");
 			System.out.println("You Win!");
-
-			System.exit(0);
+			return true;
+			
 			// break;
 		}
+		return false;
 
 	}
 
@@ -164,7 +159,10 @@ public class Game {
 			}
 			stand();
 			roundOver(); // Round is over, check for if players wins, loses, or ties
-			checkCpuBalance(); // Money is won/loss - check if CPU has money left
+			if(checkCpuBalance() == true) {
+				System.exit(0);
+			}; 
+			// Money is won/loss - check if CPU has money left
 
 		}
 		System.out.println("You have no more money. It's Game Over");
@@ -189,7 +187,7 @@ public class Game {
 
 	}
 
-	void updateBalance(String status) {
+	public void updateBalance(String status) {
 		if (status.equals("WIN")) {
 			balance += cpuBet;
 			cpuBalance -= cpuBet;
@@ -200,5 +198,88 @@ public class Game {
 		}
 
 	}
+	
+	
+	// Getters and Setters 
+	public PlayerScore getUser() {
+		return user;
+	}
+
+	public void setUser(PlayerScore user) {
+		this.user = user;
+	}
+
+	public Cpu getCpu() {
+		return cpu;
+	}
+
+	public void setCpu(Cpu cpu) {
+		this.cpu = cpu;
+	}
+
+	public float getBalance() {
+		return balance;
+	}
+
+	public void setBalance(float balance) {
+		this.balance = balance;
+	}
+
+	public float getCpuBalance() {
+		return cpuBalance;
+	}
+
+	public void setCpuBalance(float cpuBalance) {
+		this.cpuBalance = cpuBalance;
+	}
+
+	public float getCpuBet() {
+		return cpuBet;
+	}
+
+	public void setCpuBet(float cpuBet) {
+		this.cpuBet = cpuBet;
+	}
+
+	public float getBet() {
+		return bet;
+	}
+
+	public void setBet(float bet) {
+		this.bet = bet;
+	}
+
+	public Card[] getPlayingDeck() {
+		return playingDeck;
+	}
+
+	public void setPlayingDeck(Card[] playingDeck) {
+		this.playingDeck = playingDeck;
+	}
+
+	public Scanner getInput() {
+		return input;
+	}
+
+	public void setInput(Scanner input) {
+		this.input = input;
+	}
+
+	public Scanner getMoveinput() {
+		return moveinput;
+	}
+
+	public void setMoveinput(Scanner moveinput) {
+		this.moveinput = moveinput;
+	}
+
+	public int getMove() {
+		return move;
+	}
+
+	public void setMove(int move) {
+		this.move = move;
+	}
+	
 
 }

@@ -9,6 +9,7 @@ public class Player {
 	private static int turn = 0;
 	private static Card [] drawDeck = Deck.getDeck();
 	
+	
 	public Player(){
 	}
 
@@ -71,7 +72,7 @@ public class Player {
 				return sum + 10; // If aces can be 11 without going over 21, then 10 is added to make ace be 11
 			}
 		}
-
+		
 		return sum;
 	}
 	
@@ -86,6 +87,9 @@ public class Player {
 	public int getTurn() {
 		return turn;
 	}
+
+
+
 	
 
 	
