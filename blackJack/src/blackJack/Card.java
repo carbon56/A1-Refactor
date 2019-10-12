@@ -10,9 +10,7 @@ public class Card {
 		this.name = name;	
 	}
 	
-	public String toString(){
-		return this.name + " " + this.number;
-	}
+
 	
 	// Getter and Setters for number
 	public byte getNumber() {

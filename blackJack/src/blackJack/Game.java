@@ -195,17 +195,13 @@ public class Game {
 		return user;
 	}
 
-	public void setUser(PlayerScore user) {
-		this.user = user;
-	}
+
 
 	public Cpu getCpu() {
 		return cpu;
 	}
 
-	public void setCpu(Cpu cpu) {
-		this.cpu = cpu;
-	}
+
 
 	public float getBalance() {
 		return balance;
@@ -243,25 +239,7 @@ public class Game {
 		return playingDeck;
 	}
 
-	public void setPlayingDeck(Card[] playingDeck) {
-		this.playingDeck = playingDeck;
-	}
 
-	public Scanner getInput() {
-		return input;
-	}
-
-	public void setInput(Scanner input) {
-		this.input = input;
-	}
-
-	public Scanner getMoveinput() {
-		return moveinput;
-	}
-
-	public void setMoveinput(Scanner moveinput) {
-		this.moveinput = moveinput;
-	}
 
 	public int getMove() {
 		return move;
